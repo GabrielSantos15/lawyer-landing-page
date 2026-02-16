@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ============================================================================
+   CSS Variables
+   ============================================================================ */
+
+:root {
+    --color-primary: #E0D3A6;
+    --color-bg: #000000;
+    --color-surface: #2d2d2d;
+    --gradient-bg: linear-gradient(90deg, #46310C, #E0D3A6, #46310C);
+    --text-color: #ffffff;
+    --font: "Poppins", sans-serif;
+    --font-serif: "Times New Roman", Times, serif;
+}
+
+/* ============================================================================
+   Global Styles
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--color-bg);
+    color: var(--text-color);
+}
+
+.section {
+    padding: clamp(1em, 2.5vw, 2em);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+}
+
+/* ============================================================================
+   Buttons
+   ============================================================================ */
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border: 1px solid var(--color-primary);
+    font-weight: 400;
+    transition: all 0.5s ease;
+}
+
+.btn-cta {
+    background-image: var(--gradient-bg);
+    background-position: center;
+    color: #000000;
+}
+
+.btn-cta:hover {
+    box-shadow: inset 0 0 5px var(--color-primary), 0 0 5px var(--color-primary);
+}
+
+.btn-secondary {
+    color: var(--color-primary);
+}
+
+.button-group {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+/* ============================================================================
+   Hero Section
+   ============================================================================ */
+
+#hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 750px;
+    background-image: linear-gradient(90deg, var(--color-bg), color-mix(in oklab, var(--color-bg) 80%, transparent)), url(https://img.freepik.com/fotos-gratis/design-de-interiores-em-estilo-neoclassico-com-mobiliario-e-decoracao_23-2151199359.jpg?semt=ais_hybrid&w=740&q=80);
+    background-size: cover;
+    padding-bottom: 0;
+}
+
+#hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to bottom, transparent, var(--color-bg));
+    pointer-events: none;
+}
+
+.hero-content {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.hero-image {
+    position: relative;
+    width: min(80vw, 600px);
+}
+
+.hero-image img {
+    display: block;
+    max-width: 100%;
+    filter: brightness(0.9) contrast(1.1) saturate(0.9);
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    aspect-ratio: 1/1;
+    background-image: radial-gradient(circle, #ffffffde 0%, #ffeba266 5%, transparent 60%);
+}
+
+#hero h1 {
+    text-transform: uppercase;
+    font-size: clamp(2rem, 10vw, 6rem);
+    line-height: 90%;
+}
+
+#hero p {
+    opacity: 0.8;
+}
+
+/* ============================================================================
+   Deliverables Section
+   ============================================================================ */
+
+#deliverables {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.deliverables-image {
+    width: min(80%, 450px);
+}
+
+.deliverables-image img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+.deliverables-content {
+    max-width: 700px;
+}
+
+.card-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.card {
+    max-width: 400px;
+}
+
+.card:nth-child(even) {
+    transform: translateX(15%);
+}
+
+.card h4 {
+    color: var(--color-primary);
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-weight: normal;
+    border-bottom: 2px solid var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    opacity: 0.7;
+}
+
+/* ============================================================================
+   Location Section
+   ============================================================================ */
+
+.location-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.location-map {
+    position: relative;
+    flex: 1;
+}
+
+.location-map iframe {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: none;
+}
+
+.location-info {
+    flex: 1;
+    border: 1px solid var(--color-primary);
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.location-info h3 {
+    margin-bottom: 1em;
+    color: var(--color-primary);
+}
+
+.location-info p {
+    opacity: 0.8;
+    line-height: 1.6;
+}
